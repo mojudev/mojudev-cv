@@ -366,11 +366,13 @@ button {
   overflow: hidden;
   position: relative;
   width: 100%;
-  /* Data Pattern Background */
+  /* Data/Chart Pattern Background */
   background-image:
-    linear-gradient(rgba(59, 91, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 91, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(59, 91, 255, 0.05) 50%, transparent 50%);
+  background-size: 40px 40px, 40px 40px, 10px 10px;
+  background-position: center, center, 0 0;
 }
 
 .hero-main::before {
@@ -438,6 +440,18 @@ button {
   margin-top: var(--space-sm);
 }
 
+@media (max-width: 768px) {
+  .hero-info-bottom {
+    margin-top: 0;
+  }
+
+  /* Ensure background stays fixed/consistent on mobile */
+  body {
+    background-color: var(--bg-primary);
+    background-attachment: fixed;
+  }
+}
+
 .hero-title {
   font-size: var(--fs-hero);
   font-weight: 900;
@@ -496,10 +510,6 @@ button {
   letter-spacing: 2px;
   color: var(--text-primary);
   margin-bottom: var(--space-md);
-}
-
-.hero-summary-title span {
-  color: var(--accent);
 }
 
 .hero-summary-desc {
