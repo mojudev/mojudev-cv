@@ -92,6 +92,7 @@ body {
   font-size: var(--fs-body);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
 }
 
 a {
@@ -453,12 +454,14 @@ button {
 }
 
 .hero-tagline {
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: var(--space-sm);
+  font-family: var(--font-family);
+  opacity: 1;
 }
 
 .hero-desc {
@@ -487,12 +490,16 @@ button {
 }
 
 .hero-summary-title {
-  font-size: var(--fs-xs);
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--text-tertiary);
-  margin-bottom: var(--space-sm);
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.hero-summary-title span {
+  color: var(--accent);
 }
 
 .hero-summary-desc {
