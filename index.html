@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Ivan Moya – Digital Analytics & Data Analyst | Barcelona</title>
+  <meta name="description"
+    content="Ivan Moya (mojudev) – Digital Analytics & Data Analyst en Barcelona. Especialista en GA4, Adobe Analytics, GTM y Segment. Transformando datos en decisiones accionables.">
+  <meta name="keywords"
+    content="Digital Analytics Barcelona, GA4 Specialist, Adobe Analytics Consultant, Data Analyst, GTM, Segment, mojudev">
+  <meta name="author" content="Ivan Moya">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ivan Moya – Digital Analytics & Data Analyst">
+  <meta property="og:description"
+    content="Especialista en Digital Analytics con background técnico profundo. GA4, Adobe Analytics, GTM, Segment.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================== NAVIGATION ================== -->
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">moju<span>dev</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about" data-i18n="nav_about">¿Quién Soy?</a>
+        <a href="#tools" data-i18n="nav_tools">Herramientas</a>
+        <a href="#experience" data-i18n="nav_experience">Experiencia</a>
+        <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-text">EN</span>
+        </button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================== HERO SECTION ================== -->
+  <section class="hero section" id="home">
+    <div class="container">
+      <div class="hero-split">
+
+        <!-- Left Column: Profile Card -->
+        <div class="hero-left reveal">
+          <div class="hero-main">
+            <div class="hero-info">
+              <p class="hero-tagline">Digital Analytics & Data Analyst</p>
+            </div>
+            <div class="hero-icons">
+              <!-- Analytics -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18" />
+                <path d="M18 17V9" />
+                <path d="M13 17V5" />
+                <path d="M8 17v-3" />
+              </svg>
+              <!-- Database -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+              <!-- Code -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              <!-- Brain/Strategy (Lightbulb or CPU) -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
+              <!-- Target/Goal -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <div class="hero-photo-wrapper">
+              <div class="hero-photo-bg"></div>
+              <img src="profile.jpeg" alt="Ivan Moya - Digital Analytics & Data Analyst" class="hero-photo"
+                id="heroPhoto">
+            </div>
+            <div class="hero-info-bottom">
+              <h1 class="hero-title">Ivan <span>Moya</span></h1>
+              <p class="hero-desc" data-i18n="hero_desc">Transformando datos en decisiones accionables en entornos
+                digitales y de marketing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Tools & Companies Summary -->
+        <div class="hero-right reveal reveal-delay-1">
+          <!-- Core Tools -->
+          <div class="hero-summary-card">
+            <h3 class="hero-summary-title" data-i18n="hero_core_tools">Core Expertise</h3>
+            <div class="hero-summary-tags">
+              <span class="hero-tag core">GA4</span>
+              <span class="hero-tag core">Adobe Analytics</span>
+              <span class="hero-tag core">GTM</span>
+              <span class="hero-tag core">Segment</span>
+              <span class="hero-tag core">Tealium</span>
+              <span class="hero-tag core">Looker Studio</span>
+            </div>
+          </div>
+
+          <!-- Integraciones -->
+          <div class="hero-summary-card">
+            <h3 class="hero-summary-title" data-i18n="hero_integrations">Integraciones</h3>
+            <div class="hero-summary-tags">
+              <span class="hero-company">Audiencias</span>
+              <span class="hero-company">Meta</span>
+              <span class="hero-company">Google Ads</span>
+              <span class="hero-company">Appsflyer</span>
+              <span class="hero-company">GSC</span>
+              <span class="hero-company">Funnel.io</span>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="hero-summary-card">
+            <h3 class="hero-summary-title" data-i18n="hero_experience">Experiencia</h3>
+            <div class="hero-company-group">
+              <div class="hero-company-label" data-i18n="hero_companies_intl">Internacionales</div>
+              <div class="hero-companies-list">
+                <span class="hero-company">Adevinta</span>
+                <span class="hero-company">Schibsted</span>
+                <span class="hero-company">Zurich Insurance</span>
+              </div>
+            </div>
+            <div class="hero-company-group">
+              <div class="hero-company-label" data-i18n="hero_companies_nat">Nacionales</div>
+              <div class="hero-companies-list">
+                <span class="hero-company">Fotocasa</span>
+                <span class="hero-company">Coches.net</span>
+                <span class="hero-company">Milanuncios</span>
+                <span class="hero-company">Infojobs</span>
+                <span class="hero-company">Habitaclia</span>
+              </div>
+            </div>
+            <div class="hero-company-group">
+              <div class="hero-company-label" data-i18n="hero_companies_local">Locales</div>
+              <div class="hero-companies-list">
+                <span class="hero-company">Know Capital</span>
+                <span class="hero-company">Gestverd Taxi</span>
+                <span class="hero-company" data-i18n="company_cepi">Cepi-Base (Academia)</span>
+                <span class="hero-company">Eurobuses</span>
+                <span class="hero-company">Dimasa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== ABOUT SECTION ================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <span data-i18n="nav_about">¿Quién Soy?</span>
+        </span>
+        <h2 class="section-title" data-i18n="about_title">Perfil híbrido<br>técnico-analítico</h2>
+        <p class="section-subtitle" data-i18n="about_subtitle">Evolución desde desarrollo y sistemas hacia Digital
+          Analytics & Data, con foco en calidad del dato y decisiones accionables.</p>
+      </div>
+
+      <div class="about-content">
+        <!-- Narrative Timeline -->
+        <div class="about-narrative reveal reveal-delay-1">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot">01</div>
+              <div class="timeline-content">
+                <h4 data-i18n="timeline_1_title">Inicio Técnico</h4>
+                <p data-i18n="timeline_1_desc">Desarrollo web, administración de sistemas, Cobol y soporte IT. Base
+                  sólida en infraestructura y código.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot">02</div>
+              <div class="timeline-content">
+                <h4 data-i18n="timeline_2_title">Evolución hacia la Analítica</h4>
+                <p data-i18n="timeline_2_desc">Transición natural desde el desarrollo hacia la analítica digital,
+                  descubriendo el poder de los datos para tomar decisiones.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot">03</div>
+              <div class="timeline-content">
+                <h4 data-i18n="timeline_3_title">Especialización Enterprise</h4>
+                <p data-i18n="timeline_3_desc">Dominio de herramientas enterprise como GA4, Adobe Analytics, Tealium y
+                  Segment en entornos de gran escala.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot">04</div>
+              <div class="timeline-content">
+                <h4 data-i18n="timeline_4_title">Rol Estratégico Transversal</h4>
+                <p data-i18n="timeline_4_desc">Punto de conexión entre Marketing, Tech y Data en compañías digitales
+                  líderes. Visión estratégica con base técnica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Axes Cards -->
+        <div class="about-axes reveal reveal-delay-2">
+          <div class="axis-card">
+            <div class="axis-card-icon">📊</div>
+            <h4 data-i18n="axis_1_title">GA4 & Adobe Analytics</h4>
+            <p data-i18n="axis_1_desc">Especialización en implementación, gobernanza y análisis en las principales
+              plataformas de analítica digital.</p>
+          </div>
+          <div class="axis-card">
+            <div class="axis-card-icon">🔗</div>
+            <h4 data-i18n="axis_2_title">Gobernanza de Datos</h4>
+            <p data-i18n="axis_2_desc">Definición de estándares, tracking y aseguramiento de la calidad y coherencia del
+              dato analítico.</p>
+          </div>
+          <div class="axis-card">
+            <div class="axis-card-icon">🔄</div>
+            <h4 data-i18n="axis_3_title">Marketing × Tech × Data</h4>
+            <p data-i18n="axis_3_desc">Perfil puente entre tres mundos: comprensión técnica, visión de marketing y
+              mentalidad data-driven.</p>
+          </div>
+          <div class="axis-card">
+            <div class="axis-card-icon">🚀</div>
+            <h4 data-i18n="axis_4_title">Migraciones & Centralización</h4>
+            <p data-i18n="axis_4_desc">Experiencia en migraciones de analítica y centralización de medición en entornos
+              multi-marca.</p>
+          </div>
+          <div class="axis-card">
+            <div class="axis-card-icon">💻</div>
+            <h4 data-i18n="axis_5_title">Background Técnico</h4>
+            <p data-i18n="axis_5_desc">Base sólida en Web Dev, SysAdmin, Cobol y QA que potencia la comprensión de
+              implementaciones complejas.</p>
+          </div>
+          <div class="axis-card">
+            <div class="axis-card-icon">🎯</div>
+            <h4 data-i18n="axis_6_title">Calidad del Dato</h4>
+            <p data-i18n="axis_6_desc">Foco en la coherencia analítica y la fiabilidad de los datos como base para
+              decisiones de negocio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== TOOLS SECTION ================== -->
+  <section class="tools section" id="tools">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
+          <span data-i18n="nav_tools">Herramientas</span>
+        </span>
+        <h2 class="section-title" data-i18n="tools_title">Stack Profesional</h2>
+        <p class="section-subtitle" data-i18n="tools_subtitle">Las herramientas y tecnologías con las que trabajo día a
+          día para transformar datos en valor.</p>
+      </div>
+
+      <div class="tools-grid">
+        <!-- Digital Analytics -->
+        <div class="tool-category reveal reveal-delay-1">
+          <div class="tool-category-header">
+            <div class="tool-category-icon">📊</div>
+            <h3>Digital Analytics</h3>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag core">Google Analytics 4</span>
+            <span class="tool-tag core">Adobe Analytics</span>
+            <span class="tool-tag">Google Search Console</span>
+            <span class="tool-tag">Appsflyer</span>
+          </div>
+        </div>
+
+        <!-- Tag Management -->
+        <div class="tool-category reveal reveal-delay-2">
+          <div class="tool-category-header">
+            <div class="tool-category-icon">🏷️</div>
+            <h3>Tag Management & Data Collection</h3>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag core">Google Tag Manager</span>
+            <span class="tool-tag core">Tealium</span>
+            <span class="tool-tag core">Twilio Segment</span>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="tool-category reveal reveal-delay-3">
+          <div class="tool-category-header">
+            <div class="tool-category-icon">📣</div>
+            <h3>Marketing & Activation</h3>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag">Google Ads</span>
+            <span class="tool-tag">Meta Ads</span>
+            <span class="tool-tag">A/B Testing Tools</span>
+          </div>
+        </div>
+
+        <!-- Data & Technical -->
+        <div class="tool-category reveal reveal-delay-4">
+          <div class="tool-category-header">
+            <div class="tool-category-icon">⚙️</div>
+            <h3>Data & Technical</h3>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag">SQL</span>
+            <span class="tool-tag">MySQL</span>
+            <span class="tool-tag">Windows Server</span>
+            <span class="tool-tag">Linux</span>
+            <span class="tool-tag">Active Directory</span>
+            <span class="tool-tag">Domain Controller</span>
+            <span class="tool-tag">HP Quality Center</span>
+            <span class="tool-tag">AS400</span>
+            <span class="tool-tag">Cobol</span>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="tool-category reveal reveal-delay-5">
+          <div class="tool-category-header">
+            <div class="tool-category-icon">🌐</div>
+            <h3>Web Development</h3>
+          </div>
+          <div class="tool-tags">
+            <span class="tool-tag">WordPress</span>
+            <span class="tool-tag">HTML</span>
+            <span class="tool-tag">CSS</span>
+            <span class="tool-tag">JavaScript</span>
+            <span class="tool-tag">PHP</span>
+            <span class="tool-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== EXPERIENCE SECTION ================== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+          </svg>
+          <span data-i18n="nav_experience">Experiencia</span>
+        </span>
+        <h2 class="section-title" data-i18n="exp_title">Experiencia & Proyectos</h2>
+        <p class="section-subtitle" data-i18n="exp_subtitle">Trayectoria profesional en entornos enterprise y compañías
+          digitales líderes.</p>
+      </div>
+
+      <div class="experience-grid">
+
+        <!-- Fotocasa Group (Featured) -->
+        <div class="experience-card featured reveal reveal-delay-1">
+          <div>
+            <div class="experience-header">
+              <h3 class="experience-company">Fotocasa Group</h3>
+              <span class="experience-role">Digital Analytics & Data Analyst</span>
+            </div>
+            <ul class="experience-list">
+              <li data-i18n="exp_fc_1">Definición y análisis de métricas digitales</li>
+              <li data-i18n="exp_fc_2">Implementación y gobernanza de GA4 y Adobe Analytics</li>
+              <li data-i18n="exp_fc_3">Integración con herramientas de adquisición</li>
+              <li data-i18n="exp_fc_4">Soporte transversal a Marketing, Tech y Data</li>
+              <li data-i18n="exp_fc_5">Asegurar calidad y coherencia del dato</li>
+              <li data-i18n="exp_fc_6">Análisis accionable para toma de decisiones</li>
+            </ul>
+          </div>
+          <div>
+            <div class="experience-stack">
+              <span class="stack-tag">GA4</span>
+              <span class="stack-tag">Adobe Analytics</span>
+              <span class="stack-tag">GTM</span>
+              <span class="stack-tag">Segment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adevinta Spain -->
+        <div class="experience-card reveal reveal-delay-2">
+          <div class="experience-header">
+            <h3 class="experience-company">Adevinta Spain</h3>
+            <span class="experience-role">Digital Analytics Specialist</span>
+          </div>
+          <ul class="experience-list">
+            <li data-i18n="exp_ad_1">Gobernanza de GTM y Twilio Segment</li>
+            <li data-i18n="exp_ad_2">Coordinación técnica con equipos de desarrollo</li>
+            <li data-i18n="exp_ad_3">Modelos de medición cross-team</li>
+            <li data-i18n="exp_ad_4">Activación correcta de Google Ads y Meta</li>
+            <li data-i18n="exp_ad_5">Mejora de autonomía analítica del equipo</li>
+          </ul>
+          <div class="experience-brands">
+            <span class="experience-brand-tag">Fotocasa</span>
+            <span class="experience-brand-tag">InfoJobs</span>
+            <span class="experience-brand-tag">Milanuncios</span>
+            <span class="experience-brand-tag">Coches.net</span>
+            <span class="experience-brand-tag">Habitaclia</span>
+          </div>
+        </div>
+
+        <!-- Schibsted -->
+        <div class="experience-card reveal reveal-delay-3">
+          <div class="experience-header">
+            <h3 class="experience-company">Schibsted</h3>
+            <span class="experience-role" data-i18n="exp_sc_role">Migración & Centralización Analítica</span>
+          </div>
+          <ul class="experience-list">
+            <li data-i18n="exp_sc_1">Migración y centralización de analítica digital</li>
+            <li data-i18n="exp_sc_2">Resolución de fragmentación analítica</li>
+            <li data-i18n="exp_sc_3">Definición de estándares cross-site</li>
+            <li data-i18n="exp_sc_4">Metodologías comunes de medición</li>
+          </ul>
+          <div class="experience-stack">
+            <span class="stack-tag">Tealium</span>
+            <span class="stack-tag">Adobe Analytics</span>
+          </div>
+          <div class="experience-brands">
+            <span class="experience-brand-tag">Fotocasa</span>
+            <span class="experience-brand-tag">InfoJobs</span>
+            <span class="experience-brand-tag">Milanuncios</span>
+            <span class="experience-brand-tag">Coches.net</span>
+          </div>
+        </div>
+
+        <!-- Know Capital -->
+        <div class="experience-card reveal reveal-delay-4">
+          <div class="experience-header">
+            <h3 class="experience-company">Know Capital</h3>
+            <span class="experience-role">Web Developer & SysAdmin</span>
+          </div>
+          <ul class="experience-list">
+            <li data-i18n="exp_kc_1">Administración de infraestructura IT</li>
+            <li data-i18n="exp_kc_2">Gestión de servidores Windows y Linux</li>
+            <li data-i18n="exp_kc_3">Gestión de dominios y DNS</li>
+            <li data-i18n="exp_kc_4">Desarrollo web WordPress</li>
+            <li data-i18n="exp_kc_5">Implementación y análisis de Google Analytics</li>
+          </ul>
+          <div class="experience-brands">
+            <span class="experience-brand-tag">Gestverd Taxis Adaptados</span>
+            <span class="experience-brand-tag">Eurobuses</span>
+            <span class="experience-brand-tag">Dimasa</span>
+          </div>
+        </div>
+
+        <!-- Zurich -->
+        <div class="experience-card reveal reveal-delay-5">
+          <div class="experience-header">
+            <h3 class="experience-company">Zurich Insurance Group</h3>
+            <span class="experience-role">QA & Cobol Developer</span>
+          </div>
+          <ul class="experience-list">
+            <li data-i18n="exp_zu_1">Técnico de Calidad Web (HP Quality Center)</li>
+            <li data-i18n="exp_zu_2">Desarrollo Cobol (AS400)</li>
+          </ul>
+          <div class="experience-stack">
+            <span class="stack-tag">HP Quality Center</span>
+            <span class="stack-tag">AS400</span>
+            <span class="stack-tag">Cobol</span>
+          </div>
+        </div>
+
+        <!-- CEPI-BASE -->
+        <div class="experience-card reveal">
+          <div class="experience-header">
+            <h3 class="experience-company">CEPI-BASE</h3>
+            <span class="experience-role" data-i18n="exp_ce_role">Profesor de Informática</span>
+          </div>
+          <ul class="experience-list">
+            <li data-i18n="exp_ce_1">Formación en Microsoft Office</li>
+            <li data-i18n="exp_ce_2">Formación en PHP, HTML, CSS, JS</li>
+            <li data-i18n="exp_ce_3">WordPress y Adobe Suite</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-copy">© 2026 mojudev – Ivan Moya. Barcelona.</span>
+        <div class="footer-links">
+          <a href="#home" data-i18n="footer_home">Inicio</a>
+          <a href="#about" data-i18n="nav_about">¿Quién Soy?</a>
+          <a href="#tools" data-i18n="nav_tools">Herramientas</a>
+          <a href="#experience" data-i18n="nav_experience">Experiencia</a>
+          <a href="https://www.linkedin.com/in/ivanmoya/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
