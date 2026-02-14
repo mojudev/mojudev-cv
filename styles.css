@@ -172,9 +172,8 @@ button {
 
 /* ---------- Reveal Animations ---------- */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
 .reveal.active {
@@ -210,12 +209,17 @@ button {
   top: 0;
   left: 0;
   right: 0;
+  right: 0;
   z-index: 1000;
   padding: var(--space-md) 0;
   transition: background var(--transition-base),
     backdrop-filter var(--transition-base),
     border-color var(--transition-base);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(10, 10, 10, 0.95);
+  /* Always have background */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .nav.scrolled {
@@ -307,6 +311,8 @@ button {
   gap: 5px;
   padding: 4px;
   z-index: 1001;
+  cursor: pointer;
+  /* Ensure it looks clickable */
 }
 
 .nav-toggle span {
@@ -366,13 +372,11 @@ button {
   overflow: hidden;
   position: relative;
   width: 100%;
-  /* Data/Chart Pattern Background */
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(59, 91, 255, 0.05) 50%, transparent 50%);
-  background-size: 40px 40px, 40px 40px, 10px 10px;
-  background-position: center, center, 0 0;
+  /* Data Pattern Background */
+  background-image: url('bg-data.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-main::before {
@@ -441,8 +445,23 @@ button {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: calc(60px + var(--space-xl));
+    /* Revert extreme padding, handle with margin/sticky instead */
+    align-items: flex-start;
+  }
+
   .hero-info-bottom {
-    margin-top: 0;
+    margin-top: calc(var(--space-2xl) * 1.5);
+    /* Significantly more space */
+    position: sticky;
+    top: 90px;
+    z-index: 5;
+    background: rgba(10, 10, 10, 0.4);
+    /* Subtle background for readability */
+    padding: 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
   }
 
   /* Ensure background stays fixed/consistent on mobile */
@@ -479,9 +498,13 @@ button {
 }
 
 .hero-desc {
-  color: var(--text-tertiary);
-  font-size: var(--fs-body);
-  line-height: 1.7;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 80%;
+  margin: 0 auto;
+  /* Center the text */
 }
 
 /* Right Column: Summary */

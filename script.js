@@ -288,13 +288,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ========== SUBTLE PARALLAX ON HERO ========== */
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.08}px)`;
-      }
-    }, { passive: true });
-  }
+  // Parallax removed for stability
 });
