@@ -627,8 +627,8 @@ button {
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(60px + var(--space-xl));
-    /* Revert extreme padding, handle with margin/sticky instead */
+    padding-top: calc(60px + var(--space-3xl));
+    /* Increased space from navbar */
     align-items: flex-start;
   }
 
@@ -1457,7 +1457,8 @@ button {
   .hero-main {
     flex-direction: column;
     text-align: center;
-    padding: var(--space-xl);
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+    /* Increased top padding */
   }
 
   .hero-photo {
