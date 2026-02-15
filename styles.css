@@ -142,17 +142,28 @@ button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--accent);
+  color: var(--text-primary);
+  /* White text */
   margin-bottom: var(--space-lg);
   padding: var(--space-sm) var(--space-md);
-  background: var(--accent-subtle);
+  background: transparent;
+  /* Clean background */
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(59, 91, 255, 0.15);
+  border: 1px solid var(--border-color);
+  /* Subtle by default */
+  transition: all var(--transition-fast);
+}
+
+.section-label:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 .section-label svg {
   width: 14px;
   height: 14px;
+  color: var(--accent);
+  /* Corporate Blue icon */
 }
 
 .section-title {
@@ -216,16 +227,18 @@ button {
     backdrop-filter var(--transition-base),
     border-color var(--transition-base);
   border-bottom: 1px solid var(--border-color);
-  background: rgba(10, 10, 10, 0.95);
-  /* Always have background */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 10, 10, 0.5);
+  /* More transparent as requested */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Removed display:flex to fix container stretching */
 }
 
 .nav.scrolled {
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 10, 10, 0.4);
+  /* Even more transparent on scroll if desired, or keep consistent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border-color);
 }
 
@@ -233,16 +246,107 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  /* Ensure it takes full width */
 }
+
 
 .nav-logo {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.05em;
+  /* Juntar más moju y dev */
+  transition: transform var(--transition-fast);
 }
 
-.nav-logo span {
+.nav-logo:hover {
+  transform: scale(1.12);
+  /* Zoom más pronunciado */
+}
+
+/* --- Animated Logo --- */
+.logo-animate {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 24px;
+  width: 24px;
+  padding: 0 0 3px 3px;
+  /* Espacio para los ejes */
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+/* Eje Y (Vertical) */
+.logo-animate::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1px;
+}
+
+/* Eje X (Horizontal) */
+.logo-animate::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1px;
+}
+
+.logo-bar {
+  width: 4px;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: barGrow 1.2s ease-in-out infinite;
+  transform-origin: bottom;
+  /* Animar solo desde arriba */
+}
+
+.logo-bar:nth-child(1) {
+  height: 40%;
+  animation-delay: 0s;
+}
+
+.logo-bar:nth-child(2) {
+  height: 70%;
+  animation-delay: 0.2s;
+}
+
+.logo-bar:nth-child(3) {
+  height: 100%;
+  animation-delay: 0.4s;
+}
+
+.logo-bar:nth-child(4) {
+  height: 60%;
+  animation-delay: 0.1s;
+}
+
+@keyframes barGrow {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.5);
+  }
+}
+
+.nav-logo>span span {
   color: var(--accent);
 }
 
@@ -254,10 +358,25 @@ button {
 
 .nav-links a {
   color: var(--text-secondary);
-  font-size: var(--fs-small);
   font-weight: 500;
+  font-size: var(--fs-small);
   transition: color var(--transition-fast);
   position: relative;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a svg {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+  /* More visible */
+  stroke-width: 2;
+  color: var(--accent);
+  /* Corporate Blue */
 }
 
 .nav-links a::after {
@@ -386,21 +505,24 @@ button {
   }
 }
 
-
 /* ============================================
    HERO SECTION (Split Layout)
    ============================================ */
 .hero {
-  padding-top: calc(60px + var(--space-xl));
+  padding-top: calc(70px + var(--space-lg));
+  /* Reduced from 2xl */
   padding-bottom: var(--space-xl);
+  /* Reduced from 3xl */
   min-height: auto;
+  /* Allow content to dictate height */
   display: flex;
   align-items: center;
 }
 
 .hero-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
+  /* Adjusted ratio */
   gap: var(--space-xl);
   align-items: stretch;
 }
@@ -410,17 +532,20 @@ button {
   display: flex;
 }
 
+
 .hero-main {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-2xl);
-  padding: var(--space-2xl);
+  padding: var(--space-xl);
+  /* Reduced from 2xl */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
+  /* Reduced from lg */
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -449,13 +574,15 @@ button {
 }
 
 .hero-photo {
-  width: 200px;
-  height: 240px;
-  border-radius: var(--radius-xl);
+  width: 170px;
+  /* Reduced from 200 */
+  height: 210px;
+  /* Reduced from 240 */
   object-fit: cover;
+  border-radius: var(--radius-xl);
   position: relative;
-  z-index: 1;
-  border: 2px solid var(--border-color);
+  z-index: 2;
+  transition: var(--transition-base);
 }
 
 .hero-photo-bg {
@@ -484,7 +611,9 @@ button {
   width: 24px;
   height: 24px;
   stroke-width: 1.5;
-  opacity: 0.9;
+  opacity: 1;
+  color: var(--accent);
+  /* Corporate Blue */
 }
 
 .hero-info-bottom {
@@ -526,11 +655,17 @@ button {
 }
 
 .hero-title {
-  font-size: var(--fs-hero);
+  font-size: clamp(2rem, 4vw, 3rem);
+  /* Reduced slightly from previous size if needed, but adjusting constraint */
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  /* New smaller size request */
   font-weight: 900;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
+  /* Adjusted for uppercase */
   margin: 0;
+  text-transform: uppercase;
+  /* As requested */
 }
 
 .hero-title span {
@@ -541,16 +676,16 @@ button {
 }
 
 .hero-tagline {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
-  color: var(--text-primary);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  /* Same size as hero-title */
+  font-weight: 900;
+  /* Same weight as hero-title */
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: var(--space-sm);
-  margin-top: var(--space-lg);
-  /* Move down slightly as requested */
-  font-family: var(--font-family);
-  opacity: 1;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  /* Changed to White */
+  margin-bottom: -5px;
+  /* Compacted */
 }
 
 .hero-desc {
@@ -568,13 +703,15 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  /* Reduced from lg */
 }
 
 .hero-summary-card {
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md) var(--space-lg);
+  /* Reduced from lg */
   transition: border-color var(--transition-fast);
 }
 
@@ -589,6 +726,11 @@ button {
   letter-spacing: 2px;
   color: var(--text-primary);
   margin-bottom: var(--space-md);
+}
+
+.hero-summary-title svg {
+  color: var(--accent);
+  /* Corporate Blue icon */
 }
 
 .hero-summary-desc {
@@ -608,12 +750,13 @@ button {
   align-items: center;
   gap: 6px;
   padding: var(--space-xs) var(--space-md);
-  background: var(--bg-pill);
+  background: transparent;
   border: 1px solid var(--border-color);
+  /* Subtle default */
   border-radius: var(--radius-pill);
   font-size: var(--fs-xs);
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
   transition: all var(--transition-fast);
 }
 
@@ -624,16 +767,15 @@ button {
 }
 
 .hero-tag:hover {
-  border-color: var(--border-hover);
-  background: var(--bg-pill-hover);
-  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 .hero-tag.core {
-  border-color: rgba(59, 91, 255, 0.4);
-  color: var(--accent);
-  background: var(--accent-subtle);
-  font-weight: 600;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  background: transparent;
+  font-weight: 700;
 }
 
 .hero-tag.core:hover {
@@ -651,39 +793,38 @@ button {
   display: inline-flex;
   align-items: center;
   padding: var(--space-xs) var(--space-md);
-  background: var(--accent-subtle);
-  border: 1px solid rgba(59, 91, 255, 0.2);
+  background: transparent;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   font-size: var(--fs-xs);
-  color: var(--accent);
+  color: var(--text-primary);
   font-weight: 600;
   transition: all var(--transition-fast);
 }
 
 .hero-company:hover {
-  background: rgba(59, 91, 255, 0.15);
   border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 .hero-company-group {
-  margin-bottom: var(--space-sm);
+  margin-top: var(--space-sm);
+  /* Reduced from md */
 }
 
-.hero-company-group:last-child {
-  margin-bottom: 0;
+.hero-company-group:not(:last-child) {
+  margin-bottom: var(--space-sm);
+  /* Reduced from md */
 }
 
 .hero-company-label {
-  font-size: 0.7rem;
-  /* Slightly larger */
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: var(--text-secondary);
-  /* Brighter than tertiary */
   margin-bottom: 6px;
-  opacity: 1;
-  /* Fully visible */
+  display: block;
 }
 
 .hero-company-group .hero-companies-list {
@@ -696,12 +837,14 @@ button {
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-md);
-  background: var(--bg-pill);
+  background: transparent;
   border: 1px solid var(--border-color);
+  /* Neutral default */
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all var(--transition-fast);
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  /* White text */
   font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -709,8 +852,8 @@ button {
 
 .lang-switch:hover {
   border-color: var(--accent);
-  color: var(--accent);
   background: var(--accent-subtle);
+  color: var(--text-primary);
 }
 
 .lang-flag {
@@ -883,6 +1026,8 @@ button {
   justify-content: center;
   margin-bottom: var(--space-md);
   font-size: 1.2rem;
+  color: var(--accent);
+  /* Corporate Blue */
 }
 
 .axis-card h4 {
@@ -936,6 +1081,8 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
+  color: var(--accent);
+  /* Corporate Blue */
 }
 
 .tool-category h3 {
@@ -953,25 +1100,25 @@ button {
   display: inline-flex;
   align-items: center;
   padding: var(--space-sm) var(--space-md);
-  background: var(--bg-pill);
+  background: transparent;
   border: 1px solid var(--border-color);
+  /* Default border */
   border-radius: var(--radius-pill);
   font-size: var(--fs-small);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-weight: 500;
   transition: all var(--transition-fast);
 }
 
 .tool-tag:hover {
-  border-color: var(--border-hover);
-  background: var(--bg-pill-hover);
-  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 .tool-tag.core {
-  border-color: rgba(59, 91, 255, 0.4);
-  color: var(--accent);
-  background: var(--accent-subtle);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  background: transparent;
   font-weight: 600;
 }
 
@@ -1072,6 +1219,7 @@ button {
   color: var(--accent);
   flex-shrink: 0;
   margin-top: 2px;
+  font-weight: bold;
 }
 
 .experience-brands {
@@ -1083,12 +1231,18 @@ button {
 
 .experience-brand-tag {
   padding: var(--space-xs) var(--space-md);
-  background: var(--accent-subtle);
-  border: 1px solid rgba(59, 91, 255, 0.2);
+  background: transparent;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   font-size: var(--fs-xs);
-  color: var(--accent);
+  color: var(--text-primary);
   font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.experience-brand-tag:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 /* Stack tags */
@@ -1100,11 +1254,12 @@ button {
 }
 
 .stack-tag {
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--bg-pill);
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   font-size: var(--fs-xs);
-  color: var(--text-tertiary);
+  color: var(--text-primary);
   font-weight: 500;
 }
 
@@ -1207,6 +1362,8 @@ button {
 .contact-link svg {
   width: 20px;
   height: 20px;
+  color: var(--accent);
+  /* Corporate Blue */
 }
 
 /* ============================================

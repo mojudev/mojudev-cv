@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_companies_intl: 'Internacionales',
       hero_companies_nat: 'Nacionales',
       hero_companies_local: 'Locales',
+      hero_exp_marketplaces: 'Marketplaces & Classifieds',
+      hero_exp_corp: 'Corporativo & Seguros',
+      hero_exp_smb: 'Pymes & Proyectos',
       company_cepi: 'Cepi-Base (Academia)',
 
       // About
@@ -99,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_companies_intl: 'International',
       hero_companies_nat: 'National',
       hero_companies_local: 'Local',
+      hero_exp_marketplaces: 'Marketplaces & Classifieds',
+      hero_exp_corp: 'Corporate & Insurance',
+      hero_exp_smb: 'SMBs & Projects',
       company_cepi: 'Cepi-Base (Academy)',
 
       // About

@@ -34,11 +34,41 @@
   <!-- ================== NAVIGATION ================== -->
   <nav class="nav" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo">moju<span>dev</span></a>
+      <a href="#" class="nav-logo">
+        <div class="logo-animate">
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+          <div class="logo-bar"></div>
+        </div>
+        <span>moju<span>dev</span></span>
+      </a>
       <div class="nav-links" id="navLinks">
-        <a href="#about" data-i18n="nav_about">¿Quién Soy?</a>
-        <a href="#tools" data-i18n="nav_tools">Herramientas</a>
-        <a href="#experience" data-i18n="nav_experience">Experiencia</a>
+        <a href="#about">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="nav_about">¿Quién Soy?</span>
+        </a>
+        <a href="#tools">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+            </path>
+          </svg>
+          <span data-i18n="nav_tools">Herramientas</span>
+        </a>
+        <a href="#experience">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          <span data-i18n="nav_experience">Experiencia</span>
+        </a>
         <button class="lang-switch" id="langSwitch" aria-label="Switch language">
           <span class="lang-flag">🇬🇧</span>
           <span class="lang-text">EN</span>
@@ -119,7 +149,16 @@
         <div class="hero-right reveal">
           <!-- Core Tools -->
           <div class="hero-summary-card">
-            <h3 class="hero-summary-title" data-i18n="hero_core_tools">Core Expertise</h3>
+            <h3 class="hero-summary-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                style="width: 18px; height: 18px; margin-right: 8px; vertical-align: text-bottom;">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <span data-i18n="hero_core_tools">Core Expertise</span>
+            </h3>
             <div class="hero-summary-tags">
               <span class="hero-tag core">GA4</span>
               <span class="hero-tag core">Adobe Analytics</span>
@@ -132,7 +171,15 @@
 
           <!-- Integraciones -->
           <div class="hero-summary-card">
-            <h3 class="hero-summary-title" data-i18n="hero_integrations">Integraciones</h3>
+            <h3 class="hero-summary-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                style="width: 18px; height: 18px; margin-right: 8px; vertical-align: text-bottom;">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+              <span data-i18n="hero_integrations">Integraciones</span>
+            </h3>
             <div class="hero-summary-tags">
               <span class="hero-company">Audiencias</span>
               <span class="hero-company">Meta</span>
@@ -145,33 +192,48 @@
 
           <!-- Experience -->
           <div class="hero-summary-card">
-            <h3 class="hero-summary-title" data-i18n="hero_experience">Experiencia</h3>
+            <h3 class="hero-summary-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                style="width: 18px; height: 18px; margin-right: 8px; vertical-align: text-bottom;">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span data-i18n="hero_experience">Experiencia</span>
+            </h3>
+
+            <!-- Marketplaces & Classifieds -->
             <div class="hero-company-group">
-              <div class="hero-company-label" data-i18n="hero_companies_intl">Internacionales</div>
+              <div class="hero-company-label" data-i18n="hero_exp_marketplaces">Marketplaces & Classifieds</div>
+              <div class="hero-companies-list">
+                <span class="hero-company">Fotocasa</span>
+                <span class="hero-company">InfoJobs</span>
+                <span class="hero-company">Coches.net</span>
+                <span class="hero-company">Milanuncios</span>
+                <span class="hero-company">Habitaclia</span>
+              </div>
+            </div>
+
+            <!-- Corporativo & Seguros -->
+            <div class="hero-company-group">
+              <div class="hero-company-label" data-i18n="hero_exp_corp">Corporativo & Seguros</div>
               <div class="hero-companies-list">
                 <span class="hero-company">Adevinta</span>
                 <span class="hero-company">Schibsted</span>
                 <span class="hero-company">Zurich Insurance</span>
               </div>
             </div>
+
+            <!-- Pymes & Proyectos -->
             <div class="hero-company-group">
-              <div class="hero-company-label" data-i18n="hero_companies_nat">Nacionales</div>
-              <div class="hero-companies-list">
-                <span class="hero-company">Fotocasa</span>
-                <span class="hero-company">Coches.net</span>
-                <span class="hero-company">Milanuncios</span>
-                <span class="hero-company">Infojobs</span>
-                <span class="hero-company">Habitaclia</span>
-              </div>
-            </div>
-            <div class="hero-company-group">
-              <div class="hero-company-label" data-i18n="hero_companies_local">Locales</div>
+              <div class="hero-company-label" data-i18n="hero_exp_smb">Pymes & Proyectos</div>
               <div class="hero-companies-list">
                 <span class="hero-company">Know Capital</span>
-                <span class="hero-company">Gestverd Taxi</span>
-                <span class="hero-company" data-i18n="company_cepi">Cepi-Base (Academia)</span>
+                <span class="hero-company">Anforas de Mar</span>
+                <span class="hero-company">Gestverd</span>
                 <span class="hero-company">Eurobuses</span>
                 <span class="hero-company">Dimasa</span>
+                <span class="hero-company">Cepi-Base</span>
               </div>
             </div>
           </div>
@@ -484,6 +546,7 @@
             <span class="experience-brand-tag">Gestverd Taxis Adaptados</span>
             <span class="experience-brand-tag">Eurobuses</span>
             <span class="experience-brand-tag">Dimasa</span>
+            <span class="experience-brand-tag">Anforas de Mar</span>
           </div>
         </div>
 
