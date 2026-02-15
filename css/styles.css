@@ -550,7 +550,7 @@ button {
   position: relative;
   width: 100%;
   /* Data Pattern Background */
-  background-image: url('bg-data.svg');
+  background-image: url('../assets/bg-data.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
