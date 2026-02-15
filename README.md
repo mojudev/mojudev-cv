@@ -29,14 +29,14 @@ A minimalist, high-performance personal portfolio designed with a focus on **Dig
 - **JavaScript:** Vanilla ES6+ for interactions, animations, and a custom light-weight **i18n** engine.
 - **i18n:** Built-in multi-language support (Spanish/English) without third-party dependencies.
 
-### � Analytics & Privacy (Consent Mode v2)
+### 🛡️ Analytics & Privacy (Consent Mode v2)
 - **Google Analytics 4:** Implemented using **Advanced Consent Mode v2** to balance high-quality data collection with user privacy.
 - **Advanced Implementation:** Configured to send anonymous "pings" even when cookies are rejected, enabling Google's data modeling for conversions and behavioral gaps.
 - **Custom CMP:** A bespoke, prominent Cookie Management Platform (CMP) with modal-style UI and backdrop blur for clear user consent.
 - **Compliance:** Full control over `ad_storage`, `analytics_storage`, `ad_user_data`, and `ad_personalization` parameters.
 
 
-### �📂 Project Structure
+### 📂 Project Structure
 Following a professional and scalable organization:
 
 ```text
