@@ -3,12 +3,23 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5V8ZFKS98X"></script>
   <script>
+    // Define dataLayer and gtag
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
+    // Set default consent state for Consent Mode v2
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5V8ZFKS98X"></script>
+  <script>
+    gtag('js', new Date());
     gtag('config', 'G-5V8ZFKS98X');
   </script>
 
@@ -607,6 +618,23 @@
       </div>
     </div>
   </footer>
+
+  <!-- ================== COOKIE CONSENT (CMP) ================== -->
+  <div id="cmp-overlay" class="cmp-overlay hidden">
+    <div id="cmp-banner" class="cmp-banner">
+      <div class="cmp-content">
+        <div class="cmp-text">
+          <h4 data-i18n="cmp_title">Configuración de Cookies & Privacidad</h4>
+          <p data-i18n="cmp_desc">En mojudev nos tomamos en serio tu privacidad. Utilizamos Google Analytics en su
+            Modo Avanzado para entender cómo usas nuestra web y mejorar tu experiencia.</p>
+        </div>
+        <div class="cmp-actions">
+          <button id="cmp-reject" class="cmp-btn secondary" data-i18n="cmp_reject">Solo esenciales / Rechazar</button>
+          <button id="cmp-accept" class="cmp-btn primary" data-i18n="cmp_accept">Aceptar todo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/script.js"></script>

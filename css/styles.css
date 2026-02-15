@@ -1494,3 +1494,131 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   COOKIE CONSENT (CMP) - Advanced Mode UI
+   ============================================ */
+.cmp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  /* Backdrop oscuro */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.cmp-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cmp-banner {
+  width: 100%;
+  max-width: 650px;
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), var(--shadow-glow);
+  transform: scale(1);
+  transition: transform var(--transition-base);
+}
+
+.cmp-overlay.hidden .cmp-banner {
+  transform: scale(0.9);
+}
+
+.cmp-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.cmp-text h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.cmp-text p {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.cmp-text b {
+  color: var(--accent-light);
+}
+
+.cmp-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.cmp-btn {
+  flex: 1;
+  padding: 1rem var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cmp-btn.primary {
+  background: var(--accent);
+  color: var(--text-primary);
+  border: none;
+}
+
+.cmp-btn.primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.cmp-btn.secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.cmp-btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background: var(--accent-subtle);
+}
+
+@media (max-width: 768px) {
+  .cmp-overlay {
+    padding: var(--space-md);
+  }
+
+  .cmp-banner {
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .cmp-actions {
+    flex-direction: column;
+  }
+
+  .cmp-text h4 {
+    font-size: 1.25rem;
+  }
+}

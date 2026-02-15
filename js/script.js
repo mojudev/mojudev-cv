@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Footer
       footer_home: 'Inicio',
+
+      // CMP
+      cmp_title: 'Configuración de Cookies & Privacidad',
+      cmp_desc: 'En <b>mojudev</b> nos tomamos en serio tu privacidad. Utilizamos Google Analytics en su <b>Modo Avanzado</b> para entender cómo usas nuestra web y mejorar tu experiencia, incluso si decides no aceptar las cookies. <br><br>Al hacer clic en <b>"Aceptar"</b>, permites el uso de cookies analíticas y publicitarias avanzadas. Si haces clic en <b>"Rechazar"</b>, desactivaremos el almacenamiento de cookies, pero seguiremos enviando señales básicas anónimas de uso para mejorar el sitio sin identificarte.',
+      cmp_accept: 'Aceptar todo',
+      cmp_reject: 'Solo esenciales / Rechazar',
     },
     en: {
       // Nav
@@ -168,6 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Footer
       footer_home: 'Home',
+
+      // CMP
+      cmp_title: 'Cookie & Privacy Settings',
+      cmp_desc: 'At <b>mojudev</b>, we take your privacy seriously. We use Google Analytics in its <b>Advanced Mode</b> to understand how you use our site and improve your experience, even if you choose not to accept cookies. <br><br>By clicking <b>"Accept All"</b>, you allow the use of analytical and advanced advertising cookies. If you click <b>"Reject"</b>, we will disable cookie storage, but we will still send basic anonymous usage signals to improve the site without identifying you.',
+      cmp_accept: 'Accept all',
+      cmp_reject: 'Essentials only / Reject',
     }
   };
 
@@ -295,4 +307,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ========== SUBTLE PARALLAX ON HERO ========== */
   // Parallax removed for stability
+  /* ========== COOKIE CONSENT (CMP) LOGIC ========== */
+  const cmpOverlay = document.getElementById('cmp-overlay');
+  const btnAccept = document.getElementById('cmp-accept');
+  const btnReject = document.getElementById('cmp-reject');
+
+  function updateConsent(status) {
+    const consentObj = {
+      'ad_storage': status,
+      'analytics_storage': status,
+      'ad_user_data': status,
+      'ad_personalization': status
+    };
+
+    // Update GA4 Consent Mode
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', consentObj);
+    }
+
+    // Save preference
+    localStorage.setItem('mojudev-privacy-consent', status === 'granted' ? 'accepted' : 'rejected');
+
+    // Hide overlay
+    if (cmpOverlay) {
+      cmpOverlay.classList.add('hidden');
+      document.body.style.overflow = ''; // Restore scroll
+    }
+  }
+
+  // Check existing preference
+  const savedConsent = localStorage.getItem('mojudev-privacy-consent');
+
+  if (!savedConsent) {
+    // Show overlay if no preference
+    setTimeout(() => {
+      if (cmpOverlay) {
+        cmpOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Block scroll
+      }
+    }, 1500);
+  } else if (savedConsent === 'accepted') {
+    // If already accepted, update consent immediately (Advanced Mode v2)
+    updateConsent('granted');
+  } else if (savedConsent === 'rejected') {
+    // If already rejected, update consent to denied (Advanced Mode v2)
+    updateConsent('denied');
+  }
+
+  if (btnAccept) {
+    btnAccept.addEventListener('click', () => updateConsent('granted'));
+  }
+
+  if (btnReject) {
+    btnReject.addEventListener('click', () => updateConsent('denied'));
+  }
 });
