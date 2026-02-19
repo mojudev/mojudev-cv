@@ -9,7 +9,7 @@ This project was created with the assistance of **Antigravity** and is seamlessl
 ## 🚀 Live Demo
 
 The website is live and available at:
-**[https://mojudevweb.netlify.app](https://mojudevweb.netlify.app/)**
+**[https://mojudev-cv.netlify.app](https://mojudev-cv.netlify.app/)**
 
 ---
 
