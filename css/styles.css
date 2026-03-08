@@ -266,6 +266,7 @@ button {
 .nav-logo:hover {
   transform: scale(1.12);
   /* Zoom más pronunciado */
+  color: var(--text-primary);
 }
 
 /* --- Animated Logo --- */

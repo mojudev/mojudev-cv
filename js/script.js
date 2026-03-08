@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: 'Experiencia',
 
       // Hero
-      hero_desc: 'Transformando datos en decisiones accionables en entornos digitales y de marketing.',
+      hero_desc: 'Analítica, tecnología y gobernanza de datos para impulsar productos digitales.',
       hero_core_tools: 'Core Expertise',
       hero_integrations: 'Integraciones',
       hero_experience: 'Experiencia',
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_experience: 'Experience',
 
       // Hero
-      hero_desc: 'Transforming data into actionable decisions in digital and marketing environments.',
+      hero_desc: 'Analytics, technology, and data governance to drive digital products.',
       hero_core_tools: 'Core Expertise',
       hero_integrations: 'Integrations',
       hero_experience: 'Experience',
